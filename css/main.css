@@ -1,0 +1,386 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap');
+
+
+/* 基本設定 */
+
+html {
+    background: transparent;
+    font-size: 62.5%;
+}
+body {
+    min-height: 100vh;
+    background: #fff;
+    color: #26303a;
+    font-size: 1.3rem;
+    font-family: 'メイリオ', 'ヒラギノ角ゴ', sans-serif;
+    letter-spacing: 0.2em;
+    line-height: 1.8;
+}
+a {
+    text-decoration: none;
+}
+
+/* フォント設定 */
+h2,
+h3,
+h4,
+.mainNav,
+.pageNav,
+.headerInfo,
+.backTop,
+.date
+{
+    font-family: 'Barlow', sans-serif;
+    font-weight: normal;
+}
+.siteNameLogo {
+    font-family: 'Vujahday Script', cursive;
+}
+
+h2 {
+    position: relative;
+    top: 0;
+    padding: 1px;
+    margin: 50px 0 30px;
+    font-size: 1.3em;
+    line-height: 2.5rem;
+    text-align: center;
+    text-indent: .2em;
+    z-index: 2;
+}
+h2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 70%;
+    width: 50%;
+    height: 1px;
+    border-top: #cad4d8 solid 1px;
+    box-sizing: border-box;
+    transform: translateX(50%);
+    z-index: -1;
+}
+h3 {
+    border-left: #d7e6ec solid 5px;
+    padding: 3px 10px;
+    margin: 20px 0 15px;
+    font-size: 1.1em;
+}
+h4 {
+    margin: 15px 10px 10px;
+}
+strong {
+    background: #609ba8;
+    color: #fff;
+}
+em {
+    background: center / 100%;
+    background-image: linear-gradient(#ffffff25, #ffffff25), url('/img/main.png');
+    font-weight: normal;
+}
+ul,ol {
+    list-style: none;
+}
+
+
+
+/* 段落、余白 */
+p {
+    padding: 0 1.5em;
+}
+.box {
+    position: relative;
+    padding: 30px 40px 60px;
+    margin: 100px 0;
+    border: #cbd5d8 solid 1px;
+}
+.space {
+    margin: 2em 1.5em 3em;
+}
+
+.pageWrap {
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.contentsWrap {
+    width: 50%;
+    min-width: 700px;
+    max-width: 900px;
+    min-height: 100vh;
+    padding: 5vh 0;
+    margin: 5vh auto 10vh;
+    box-sizing: border-box;
+}
+.contentsWrap a {
+    color: #60a8c5;
+}
+
+
+/* インデックス（メインヘッダー） */
+.mainHeaderWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ↓余白調整 */
+:root {
+    --space: 20px;
+}
+.headerInfo {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    color: #3b4243;
+    font-size: 1.3em;
+    letter-spacing: .2em;
+    line-height: 1em;
+    z-index: 2;
+}
+.headerInfo > span {
+    display: inline-block;
+    background: #fff;
+}
+.headerInfo.side {
+    max-width: 80vh;
+}
+.headerTop {
+    top: calc(-1em - var(--space));
+    right: 0;
+    text-align: right;
+}
+.headerRight {
+    top: 0;
+    left: calc(100% + 1em + var(--space));
+    text-transform: uppercase;
+    transform: rotate(90deg);
+    transform-origin: left top;
+}
+.headerBottom {
+    bottom: calc(-1em - var(--space));
+    left: 0;
+}
+.headerLeft {
+    bottom: 0;
+    left: calc(-1 * var(--space));
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+}
+
+
+.mainHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    width: 60%;
+    max-width: 800px;
+    height: 80vh;
+    padding: 50px 50px 70px;
+    background: url('/img/main.png') center / cover no-repeat #dde8ea;
+    box-sizing: border-box;
+}
+.mainHeader::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -13vh;
+    left: 72%;
+    width: 80%;
+    height: 80%;
+    background: url('/img/5kaku.png') left bottom / contain no-repeat;
+}
+
+
+.siteNameLogo {
+    display: inline-block;
+    position: relative;
+    padding: 10px 0;
+    font-size: 5rem;
+    text-align: center;
+}
+.siteNameLogo::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 90%;
+    height: 60%;
+    border: solid 1px #95adb4;
+    box-sizing: border-box;
+}
+.siteNameLogo > span {
+    display: inline-block;
+    position: relative;
+    color: #536163;
+    font-weight: 500;
+    letter-spacing: 0;
+    transform: rotate(-3deg);
+    z-index: 2;
+}
+.siteName {
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+
+
+/* ナビゲーション */
+.mainNav {
+    box-sizing: border-box;
+}
+.mainNav ul {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.mainNav > ul {
+    margin: 20px 0;
+}
+.mainNav li {
+    margin: 0 10px;
+}
+.mainNav a {
+    display: inline-block;
+    position: relative;
+    padding: 2px 0;
+    background: #ffffff88;
+    color: #6e7577;
+    font-size: 1.2em;
+    line-height: 1em;
+}
+.mainNav a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 70%;
+    width: 30%;
+    height: 1px;
+    border-bottom: solid 1px #455d6800;
+    box-sizing: border-box;
+    transform: rotate(-3deg);
+    transform-origin: left bottom;
+    transition: .3s;
+}
+.mainNav a:hover::before {
+    width: 100%;
+    border-color: #455d6883;
+}
+.strech {
+    width: 100%;
+}
+.lastUp {
+    font-size: 1rem;
+}
+.lastUp::before {
+    content: ':';
+    display: block;
+    margin: 5px 1em;
+}
+
+
+/* レスポンシブ調整用 */
+@media (max-width:1100px) {
+    body {
+        font-size: 1.2rem;
+    }
+    .box {
+        padding: 30px 30px 50px;
+    }
+    .contentsWrap {
+        min-width: 600px;
+
+    }
+    .pageNav ul {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width:700px) {
+    h2 {
+        margin: 20px 0;
+        font-size: 1.2em;
+    }
+    h2::after {
+        width: 70%;
+        left: 15%;
+        transform: none;
+    }
+    h3 {
+        font-size: 1em;
+    }
+    h4 {
+        margin: 10px 0;
+    }
+    p {
+        padding: 0 .5em;
+    }
+    .box {
+        padding: 20px 20px;
+        margin: 50px 0;
+        border-top: none;
+        border-bottom: none;
+    }
+    .space {
+        margin: 1em .5em;
+    }
+    .contentsWrap {
+        width: 90%;
+        min-width: 200px;
+        max-width: 450px;
+        padding: 0;
+        margin: 30px auto;
+    }
+
+    .mailForm .input {
+        width: 90%;
+    }
+    .nameChange .input {
+        width: 6em;
+    }
+
+    .logTrigger {
+        display: block;
+        width: 4em;
+        margin-left: auto;
+    }
+
+    .longList {
+        display: block;
+    }
+    .longList li {
+
+        margin: 30px 0;
+    }
+    .shortList {
+        columns: 1;
+    }
+    .pageNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        background: #0000;
+
+    }
+    .pageNav::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .5;
+        transform: translate(-100%);
+        transition: .3s;
+        z-index: -1;
+    }
+}
+
